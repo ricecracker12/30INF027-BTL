@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>An Toàn Trẻ Em</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f1f1f1;
+            font-size: 62.5%;
+        }
+
+        .banner-container {
+            width: 100vw;
+            height: calc(100vh - 80px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            transition: transform 0.8s ease;
+        }
+
+        .banner-slide {
+            flex: 0 0 100%;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: opacity 0.9s ease;
+        }
+
+        .banner-slide.inactive {
+            opacity: 0;
+        }
+
+        .banner-slide.active {
+            opacity: 1;
+        }
+
+        .banner-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+            z-index: 1;
+        }
+
+        .banner img {
+            width: 100%;
+            height: auto; /* Điều chỉnh chiều cao tự động */
+            object-fit: cover;
+        }
+
+        .banner-content {
+            position: absolute;
+            top: 30%;
+            left: 50px;
+            width: 50%;
+            z-index: 2;
+            text-align: start;
+            color: #fff;
+        }
+
+        .banner-content h1 {
+            font-size: 1.5rem; /* Giảm kích thước cho phù hợp */
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .banner-content p {
+            font-size: 0.5rem; /* Tăng kích thước văn bản để dễ đọc hơn */
+        }
+
+        .banner-content a {
+            display: inline-block;
+            padding: 5px 15px;
+            margin-top: 1rem;
+            background-color: #fff;
+            color: #333;
+            text-decoration: none;
+            border: 1px solid rgb(145, 0, 0);
+            transition: all 0.3s;
+        }
+        .banner-content a:hover {
+            background-color: rgb(145, 0, 0);
+            color: #fff;
+            transform: scale(1.1);
+            transition: all 0.5s;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 3;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        .prev:hover, .next:hover {
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        @media screen and (max-width: 500px) {
+            .banner-container {
+                height: auto;
+            }
+            .banner-content {
+                width: 70%; /* Tăng độ rộng cho nội dung */
+                left: 10%; /* Đặt lại vị trí cho phù hợp */
+            }
+            .banner-content h1 {
+                font-size: 0.7rem; /* Giảm kích thước tiêu đề cho phù hợp với màn hình nhỏ hơn */
+                margin-bottom: 0.5rem; /* Giảm khoảng cách giữa các phần tử */ 
+            }
+            .banner-content p {
+                font-size: 0.5rem; /* Giảm kích thước văn bản cho màn hình nhỏ hơn */
+            }
+            .banner-content a {
+                padding: 3px 10px; /* Giảm kích thước nút cho phù hợp */
+                margin-top: 0.5rem;
+                font-size: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner-container">
+        <div class="banner">
+            <div class="banner-slide active">
+                <img src="banner1.png" alt="Banner 1">
+                <div class="banner-content">
+                    <h1>Việt Nam đạt được những tiến bộ trong việc thực hiện quyền trẻ em</h1>
+                    <p>Hầu hết trẻ em được hưởng lợi từ chính sách giáo dục đào tạo, được tiếp cận với dịch vụ chăm sóc sức khỏe đầy đủ và có thể sống thọ hơn cha mẹ mình.</p>
+                    <a href="#">Tìm hiểu thêm</a>
+                </div>
+            </div>
+            <div class="banner-slide">
+                <img src="banner2.png" alt="Banner 2">
+                <div class="banner-content">
+                    <h1>Hệ thống bảo vệ trẻ em</h1>
+                    <p>UNICEF hợp tác với các đối tác để tăng cường hệ thống bảo vệ trẻ em của Việt Nam nhằm ứng phó với tình trạng gia tăng trẻ em bị bỏ rơi, xao nhãng, lạm dụng và khai thác cũng như tội phạm thanh thiếu niên.</p>
+                    <a href="#">Khám phá</a>
+                </div>
+            </div>
+            <div class="banner-slide">
+                <img src="banner3.png" alt="Banner 3">
+                <div class="banner-content">
+                    <h1>Siêu bão Yagi, Việt Nam</h1>
+                    <p>Hãy cùng chúng tôi tham gia vào sứ mệnh khẩn cấp để đồng hành cùng những trẻ em và gia đình chịu ảnh hưởng nặng nề nhất bởi thảm họa này.</p>
+                    <a href="#">Tìm hiểu thêm</a>
+                </div>
+            </div>
+        </div>
+        <button class="prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <script>
+        const banner = document.querySelector('.banner');
+        const slides = document.querySelectorAll('.banner-slide');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        let currentSlide = 0;
+        const slideCount = slides.length;
+
+        function showSlide(index) {
+            if (index < 0) index = slideCount - 1;
+            if (index >= slideCount) index = 0;
+
+            // Xóa lớp active và thêm lớp inactive cho tất cả các slide
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                slide.classList.add('inactive');
+                if (i === index) {
+                    slide.classList.remove('inactive');
+                    slide.classList.add('active');
+                }
+            });
+
+            // Di chuyển banner
+            banner.style.transform = `translateX(-${index * 100}%)`;
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        nextButton.addEventListener('click', nextSlide);
+        prevButton.addEventListener('click', prevSlide);
+
+        // Tự động chuyển slide sau mỗi 10 giây
+        setInterval(nextSlide, 10000);
+    </script>
+</body>
+</html>
