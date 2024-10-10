@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f1f1f1;
+    font-size: 62.5%;
+}
+
+.banner-container {
+    width: 100vw;
+    height: calc(100vh - 80px);
+    position: relative;
+    overflow: hidden;
+}
+
+.banner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    transition: transform 0.8s ease;
+}
+
+.banner-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: opacity 0.9s ease;
+}
+
+.banner-slide.inactive {
+    opacity: 0;
+}
+
+.banner-slide.active {
+    opacity: 1;
+}
+
+.banner-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%; /* Điều chỉnh chiều cao tự động */
+    object-fit: cover;
+}
+
+.banner-content {
+    position: absolute;
+    top: 40%;
+    left: 50px;
+    width: 50%;
+    z-index: 2;
+    text-align: start;
+    color: #fff;
+}
+
+.banner-content h1 {
+    font-size: 2.5rem; /* Giảm kích thước cho phù hợp */
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.banner-content p {
+    font-size: 1rem; /* Tăng kích thước văn bản để dễ đọc hơn */
+}
+
+.banner-content a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 1rem;
+    background-color: #fff;
+    font-size: 1rem;
+    color: #333;
+    text-decoration: none;
+    border: 1px solid rgb(145, 0, 0);
+    transition: all 0.3s;
+}
+.banner-content a:hover {
+    background-color: rgb(145, 0, 0);
+    color: #fff;
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 3;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 2rem;
+    transition: color 0.3s ease;
+}
+
+.prev:hover, .next:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+@media screen and (max-width: 500px) {
+    .banner-container {
+        height: auto;
+    }
+    .banner-content {
+        width: 70%; /* Tăng độ rộng cho nội dung */
+        left: 10%; /* Đặt lại vị trí cho phù hợp */
+        top: 30%;
+    }
+    .banner-content h1 {
+        font-size: 0.7rem; /* Giảm kích thước tiêu đề cho phù hợp với màn hình nhỏ hơn */
+        margin-bottom: 0.5rem; /* Giảm khoảng cách giữa các phần tử */ 
+    }
+    .banner-content p {
+        font-size: 0.4rem; /* Giảm kích thước văn bản cho màn hình nhỏ hơn */
+    }
+    .banner-content a {
+        padding: 3px 10px; /* Giảm kích thước nút cho phù hợp */
+        margin-top: 0.5rem;
+        font-size: 0.5rem;
+    }
+}
