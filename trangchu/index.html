@@ -7,8 +7,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <title>An Toàn Trẻ Em</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script2.js"></script>
 </head>
 <body>
+    
     <div class="banner-container">
         <div class="banner">
             <div class="banner-slide active">
@@ -42,27 +44,14 @@
 
     <div class="container">
         <div class="boxtext">
-            <h1>Khám phá</h1>
-            <div class="tieude">SAFETY OF CHILDREN</div>
-            <p>Safety of children được hình thành từ 09/2024</p>
-            <br>
-            <p>Khởi đầu từ một nhóm nhỏ các bạn trẻ với tình yêu thương trẻ em, hoạt động tự phát và nhỏ lẻ. Trải qua nhiều thăng trầm, Safety of children đã không ngừng cố gắng vươn lên, tự hoàn thiện tổ chức.</p>
-            <h2>SỨ MỆNH</h2>
-            <p>Sẵn sàng là ngọn cờ dẫn đầu, lan tỏa tinh thần giúp đỡ động vật, cổ vũ – hỗ trợ các nhóm nhỏ hơn cùng phát triển và đi đúng hướng trên con đường bảo vệ và nâng cao quyền lợi của trẻ em tại Việt Nam. </p>
-            <h2>MỤC TIÊU</h2>
-            <p> Mục tiêu chính là cung cấp kiến thức, công cụ và hỗ trợ cho các bậc phụ huynh, giáo viên và cộng đồng nhằm đảm bảo môi trường an toàn cho trẻ em. Trang web tập trung vào việc phòng chống bạo lực, xâm hại và tai nạn, đồng thời nâng cao nhận thức về quyền trẻ em và các biện pháp. </p>
-            <a href="#">About Us</a>
-        </div>
-        <br>
-        <div class="boxtext">
             <h1>Tin Tức Và Sự Kiện Chính</h1>
             <div class="container1">
                 <nav class="nav">
-                    <div class="nav-item">Quyền trẻ em</div>
-                    <div class="nav-item">Giáo dục cho trẻ</div>
-                    <div class="nav-item">Bảo hành trẻ em</div>
+                    <div class="nav-item active" onclick="showContent('item1')">Quyền trẻ em</div>
+                    <div class="nav-item" onclick="showContent('item2')">Giáo dục cho trẻ</div>
+                    <div class="nav-item" onclick="showContent('item3')">Bạo hành trẻ em</div>
                 </nav>
-                <div class="content">
+                <div class="content active" id="item1">
                     <div class="main-content">
                         <div class="card">
                             <div class="card-image-container">
@@ -70,8 +59,6 @@
                             </div>
                             <div class="card-content">
                                 <div class="card-title">QUYỀN TRẺ EM</div>
-
-                                
                             </div>
                         </div>
                         <a href="#">XEM THÊM</a>
@@ -83,7 +70,7 @@
                             </div>
                             <div class="article-content">
                                 <a class="article-title">Hệ thống bảo vệ trẻ em</a>
-                                <h4>SOC hợp tác với các đối tác để tăng cường hệ thống bảo vệ trẻ em của Việt Nam...</p>
+                                <h4>SOC hợp tác với các đối tác để tăng cường hệ thống bảo vệ trẻ em của Việt Nam...</h4>
                             </div>
                         </div>
                         <div class="article">
@@ -106,10 +93,159 @@
                         </div>
                     </div>
                 </div>
+        
+                <div class="content" id="item2">
+                    <div class="main-content">
+                        <div class="card">
+                            <div class="card-image-container">
+                                <img src="giaoductre1.png" alt="Giao dục trẻ">
+                            </div>
+                            <div class="card-content">
+                                <div class="card-title">GIÁO DỤC CHO TRẺ</div>
+                            </div>
+                        </div>
+                        <a href="#">XEM THÊM</a>
+                    </div>
+                    <div class="side-content">
+                        <div class="article">
+                            <div class="article-image-container">
+                                <img src="giaoductre2.png" alt="giáo dục trẻ 2">
+                            </div>
+                            <div class="article-content">
+                                <a class="article-title">Thói quen đọc sách của trẻ em</a>
+                                <h4>Trong những năm gần đây, văn hóa đọc đang dần suy thoái. Tình trạng giới trẻ tiếp xúc...</h4>
+                            </div>
+                        </div>
+                        <div class="article">
+                            <div class="article-image-container">
+                                <img src="giaoductre3.png" alt="giao duc tre 3">
+                            </div>
+                            <div class="article-content">
+                                <a class="article-title">Giáo dục</a>
+                                <h4>Chương trình học cho trẻ em được thiết kế để phát triển...</h4>
+                            </div>
+                        </div>
+                        <div class="article">
+                            <div class="article-image-container">
+                                <img src="giaoductre4.png" alt="Trẻ em học tập">
+                            </div>
+                            <div class="article-content">
+                                <a class="article-title">Giáo dục hòa nhập cho trẻ khuyết tật</a>
+                                <h4>SOC nỗ lực nhằm đảm bảo trẻ em và thanh thiếu niên khuyết tật ở Việt Nam có...</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="content" id="item3">
+                    <div class="main-content">
+                        <div class="card">
+                            <div class="card-image-container">
+                                <img src="baohanhtre.png" alt="bạo hành trẻ">
+                            </div>
+                            <div class="card-content">
+                                <div class="card-title">BẠO HÀNH TRẺ EM</div>
+                            </div>
+                        </div>
+                        <a href="#">XEM THÊM</a>
+                    </div>
+                    <div class="side-content">
+                        <div class="article">
+                            <div class="article-image-container">
+                                <img src="baohanhtre1.png" alt="baohanhtre1">
+                            </div>
+                            <div class="article-content">
+                                <a class="article-title">Bảo vệ quyền của trẻ em trước thực trạng bạo lực</a>
+                                <h4>Trẻ nhỏ bị tát vào mặt; trẻ em gái và trẻ em trai bị ép tham gia các hành vi tình dục...</h4>
+                            </div>
+                        </div>
+                        <div class="article">
+                            <div class="article-image-container">
+                                <img src="baohanhtre2.png" alt="baohanhtre44">
+                            </div>
+                            <div class="article-content">
+                                <a class="article-title">Đảm bảo an toàn cho trẻ, ngăn chặn các hành vi bạo hành</a>
+                                <h4>Mọi trẻ em đều có quyền tới trường và đi học...</h4>
+                            </div>
+                        </div>
+                        <div class="article">
+                            <div class="article-image-container">
+                                <img src="baohanhtre3.png" alt="BH trẻ">
+                            </div>
+                            <div class="article-content">
+                                <a class="article-title">Bạo lực với trẻ em trong gia đình phổ biến ở Việt Nam</a>
+                                <h4>Trẻ em trong các gia đình có bạo lực thường miêu tả các hình thức bạo lực khác nhau...</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+        <br>
+        <div class="boxtext">
+            <h1>Về chúng tôi</h1>
+            <div class="tieude">SAFETY OF CHILDREN</div>
+            <p>Safety of children được hình thành từ 09/2024</p>
+            <br>
+            <p>Khởi đầu từ một nhóm nhỏ các bạn trẻ với tình yêu thương trẻ em, hoạt động tự phát và nhỏ lẻ. Trải qua nhiều thăng trầm, Safety of children đã không ngừng cố gắng vươn lên, tự hoàn thiện tổ chức.</p>
+            <h2>SỨ MỆNH</h2>
+            <p>Sẵn sàng là ngọn cờ dẫn đầu, lan tỏa tinh thần giúp đỡ động vật, cổ vũ – hỗ trợ các nhóm nhỏ hơn cùng phát triển và đi đúng hướng trên con đường bảo vệ và nâng cao quyền lợi của trẻ em tại Việt Nam. </p>
+            <h2>MỤC TIÊU</h2>
+            <p> Mục tiêu chính là cung cấp kiến thức, công cụ và hỗ trợ cho các bậc phụ huynh, giáo viên và cộng đồng nhằm đảm bảo môi trường an toàn cho trẻ em. Trang web tập trung vào việc phòng chống bạo lực, xâm hại và tai nạn, đồng thời nâng cao nhận thức về quyền trẻ em và các biện pháp. </p>
+            <a href="#">About Us</a>
+        </div>
+        <div class="boxtext">
+            <h1>Nhà tài trợ</h1>
+            <div class="container2">
+                <div class="partner">
+                    <img src="https://9746c6837f.vws.vegacdn.vn/posts/files/thong-tin-ve-ngan-hang-vietcombank.jpg" alt="Vietcombank">
+                </div>
+                <div class="partner">
+                    <img src="https://inkythuatso.com/uploads/thumbnails/800/2021/09/logo-techcombank-inkythuatso-10-15-17-50.jpg" alt="Techcombank">
+                </div>
+                <div class="partner">
+                    <img src="https://salereal.com.vn/wp-content/uploads/2020/10/logo-tap-doan-hoa-sen.png" alt="Partner 3">
+                </div>
+                <div class="partner">
+                    <img src="https://sudospaces.com/hoaphat-com-vn/2019/10/hpg-logo-cymk-0211-artboard-7-copy-2.jpg" alt="Partner 4">
+                </div>
+                <div class="partner">
+                    <img src="https://upload.wikimedia.org/wikipedia/vi/0/06/Vinamilk_logo.jpg?20210605182355" alt="Partner 5">
+                </div>
+                <div class="partner">
+                    <img src="https://media.loveitopcdn.com/3807/logo-vpbank-moi.jpg" alt="Partner 6">
+                </div>
+
+            </div>
+        
+        
+    </div>
+    </div>
+    <div class="container">
+        <div class="boxtext">
+            <h1>Quyên góp</h1>
+            <div class="container3">
+                <div class="anhdonate">
+                    <img src="https://media.istockphoto.com/id/1353332258/vi/anh/kh%C3%A1i-ni%E1%BB%87m-quy%C3%AAn-g%C3%B3p-t%C3%ACnh-nguy%E1%BB%87n-vi%C3%AAn-t%E1%BA%B7ng-h%E1%BB%99p-quy%C3%AAn-g%C3%B3p-cho-ng%C6%B0%E1%BB%9Di-nh%E1%BA%ADn-%C4%91%E1%BB%A9ng-d%E1%BB%B1a-v%C3%A0o-t%C6%B0%E1%BB%9Dng.jpg?s=612x612&w=0&k=20&c=jh3WGJYjCzDXEtZuVXnhTwvZHHqi4s0q8ietKTJRFN0=" alt="Donate 1">
+                </div>
+                <div class="noidungdonate">
+                    <h2>CƠ HỘI CHO TRẺ EM</h2>
+                    <p>Safety Of Children đã dẫn đầu nỗ lực toàn cầu vì quyền trẻ em. Hãy tham gia cùng chúng tôi để có những tác động tích cực đến cuộc sống của trẻ em thế giới và trẻ em Việt Nam</p>
+                    <a href="#" class="lienket">Quyên góp</a>
+                </div>
+                
 
         </div>
     </div>
+    <div class="cuoicung">
+        <h2>Trẻ em cần những người tiên phong dẫn đầu.</h2>
+        <p>Tham gia, nói chuyện, tình nguyện và tạo cho mọi trẻ em một cơ hội công bằng để vươn tới thành công.</p>
+    </div>
+    </div>
+    
+    
+
+
 
 
 
@@ -119,7 +255,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     
          
-           <div class="container">
+           <div class="container-footer">
                <div class="row">
                    <div class="footer-col">
                        <h4>Thông tin</h4>
@@ -159,47 +295,8 @@
            </div>
         <p>&copy; 2024 Safety Of Children. All Rights Reserved.</p>
       </footer>
+      <script src="script.js"></script>
 
-    <script>
-        const banner = document.querySelector('.banner');
-        const slides = document.querySelectorAll('.banner-slide');
-        const prevButton = document.querySelector('.prev');
-        const nextButton = document.querySelector('.next');
-        let currentSlide = 0;
-        const slideCount = slides.length;
-
-        function showSlide(index) {
-            if (index < 0) index = slideCount - 1;
-            if (index >= slideCount) index = 0;
-
-            // Xóa lớp active và thêm lớp inactive cho tất cả các slide
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                slide.classList.add('inactive');
-                if (i === index) {
-                    slide.classList.remove('inactive');
-                    slide.classList.add('active');
-                }
-            });
-
-            // Di chuyển banner
-            banner.style.transform = `translateX(-${index * 100}%)`;
-            currentSlide = index;
-        }
-
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
-
-        function prevSlide() {
-            showSlide(currentSlide - 1);
-        }
-
-        nextButton.addEventListener('click', nextSlide);
-        prevButton.addEventListener('click', prevSlide);
-
-        // Tự động chuyển slide sau mỗi 10 giây
-        setInterval(nextSlide, 10000);
-    </script>
+    
 </body>
 </html>

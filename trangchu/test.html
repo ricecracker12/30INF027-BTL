@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin Tức Và Sự Kiện Chính</title>
+    <style>
+        .container1 {
+            max-width: 1200px;
+            margin: 20px 0;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .nav {
+            display: flex;
+            gap: 10px;
+            padding: 20px;
+        }
+        .nav-item {
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: clamp(0.8rem, 3vw, 1.5rem);
+        }
+        .nav-item:first-child {
+            background-color: #b71c1c;
+            color: white;
+        }
+        .nav-item:not(:first-child) {
+            background-color: rgb(203, 203, 204);
+            color: rgb(255, 254, 254);
+        }
+        .nav-item:not(:first-child):hover {
+            background-color: #b71c1c;
+            color: white;
+            transition: all 0.5s;
+        }
+        .nav-item.active {
+            background-color: #b71c1c;
+            color: white;
+        }
+        .content {
+            display: none; /* Mặc định là ẩn */
+            flex-wrap: wrap;
+            padding: 20px;
+            gap: 20px;
+        }
+        .content.active {
+            display: flex; /* Hiện thị khi có lớp active */
+        }
+        .main-content {
+            flex: 1;
+            min-width: 300px;
+            max-height: 500px;
+        }
+        .side-content {
+            flex: 2;
+            min-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="boxtext">
+        <h1>Tin Tức Và Sự Kiện Chính</h1>
+        <div class="container1">
+            <nav class="nav">
+                <div class="nav-item active" data-content="quyentreem">Quyền trẻ em</div>
+                <div class="nav-item" data-content="giaoductre">Giáo dục cho trẻ</div>
+                <div class="nav-item" data-content="baohanh">Bạo hành trẻ em</div>
+            </nav>
+            <div class="content active" id="quyentreem">
+                <div class="main-content">
+                    <div class="card">
+                        <div class="card-image-container">
+                            <img src="quyentreem1.png" alt="Quyền trẻ em">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">QUYỀN TRẺ EM</div>
+                        </div>
+                    </div>
+                    <a href="#">XEM THÊM</a>
+                </div>
+                <div class="side-content">
+                    <div class="article">
+                        <div class="article-image-container">
+                            <img src="quyentreem2.png" alt="Trẻ em chơi diều">
+                        </div>
+                        <div class="article-content">
+                            <a class="article-title">Hệ thống bảo vệ trẻ em</a>
+                            <h4>SOC hợp tác với các đối tác để tăng cường hệ thống bảo vệ trẻ em của Việt Nam...</h4>
+                        </div>
+                    </div>
+                    <div class="article">
+                        <div class="article-image-container">
+                            <img src="quyentreem3.png" alt="Trẻ em chơi thể thao">
+                        </div>
+                        <div class="article-content">
+                            <a class="article-title">Vấn đề trong tư pháp người chưa thành niên</a>
+                            <h4>Giống như hầu hết các quốc gia khác trên thế giới, hệ thống tư pháp của Việt...</h4>
+                        </div>
+                    </div>
+                    <div class="article">
+                        <div class="article-image-container">
+                            <img src="quyentreem4.png" alt="Trẻ em học tập">
+                        </div>
+                        <div class="article-content">
+                            <a class="article-title">Chương trình tăng cường quyền được bảo vệ của trẻ em</a>
+                            <h4>Quyền được bảo vệ của trẻ em được tăng cường thông qua việc đảm bảo môi trường...</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content" id="giaoductre">
+                <div class="main-content">
+                    <div class="card">
+                        <div class="card-image-container">
+                            <img src="quyentreem1.png" alt="Quyền trẻ em">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">QUYỀN TRẺ EM</div>
+                        </div>
+                    </div>
+                    <a href="#">XEM THÊM</a>
+                </div>
+                <div class="side-content">
+                    <div class="article">
+                        <div class="article-image-container">
+                            <img src="quyentreem2.png" alt="Trẻ em chơi diều">
+                        </div>
+                        <div class="article-content">
+                            <a class="article-title">Hệ thống bảo vệ trẻ em</a>
+                            <h4>SOC hợp tác với các đối tác để tăng cường hệ thống bảo vệ trẻ em của Việt Nam...</h4>
+                        </div>
+                    </div>
+                    <div class="article">
+                        <div class="article-image-container">
+                            <img src="quyentreem3.png" alt="Trẻ em chơi thể thao">
+                        </div>
+                        <div class="article-content">
+                            <a class="article-title">Vấn đề trong tư pháp người chưa thành niên</a>
+                            <h4>Giống như hầu hết các quốc gia khác trên thế giới, hệ thống tư pháp của Việt...</h4>
+                        </div>
+                    </div>
+                    <div class="article">
+                        <div class="article-image-container">
+                            <img src="quyentreem4.png" alt="Trẻ em học tập">
+                        </div>
+                        <div class="article-content">
+                            <a class="article-title">Chương trình tăng cường quyền được bảo vệ của trẻ em</a>
+                            <h4>Quyền được bảo vệ của trẻ em được tăng cường thông qua việc đảm bảo môi trường...</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content" id="baohanh">
+                <div class="main-content">
+                    <div class="card">
+                        <div class="card-image-container">
+                            <img src="quyentreem1.png" alt="Quyền trẻ em">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">QUYỀN TRẺ EM</div>
+                        </div>
+                    </div>
+                    <a href="#">XEM THÊM</a>
+                </div>
+                <div class="side-content">
+                    <div class="article">
+                        <div class="article-image-container">
+                            <img src="quyentreem2.png" alt="Trẻ em chơi diều">
+                        </div>
+                        <div class="article-content">
+                            <a class="article-title">Hệ thống bảo vệ trẻ em</a>
+                            <h4>SOC hợp tác với các đối tác để tăng cường hệ thống bảo vệ trẻ em của Việt Nam...</h4>
+                        </div>
+                    </div>
+                    <div class="article">
+                        <div class="article-image-container">
+                            <img src="quyentreem3.png" alt="Trẻ em chơi thể thao">
+                        </div>
+                        <div class="article-content">
+                            <a class="article-title">Vấn đề trong tư pháp người chưa thành niên</a>
+                            <h4>Giống như hầu hết các quốc gia khác trên thế giới, hệ thống tư pháp của Việt...</h4>
+                        </div>
+                    </div>
+                    <div class="article">
+                        <div class="article-image-container">
+                            <img src="quyentreem4.png" alt="Trẻ em học tập">
+                        </div>
+                        <div class="article-content">
+                            <a class="article-title">Chương trình tăng cường quyền được bảo vệ của trẻ em</a>
+                            <h4>Quyền được bảo vệ của trẻ em được tăng cường thông qua việc đảm bảo môi trường...</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Lấy tất cả các item trong thanh điều hướng
+        const navItems = document.querySelectorAll('.nav-item');
+        const contents = document.querySelectorAll('.content');
+
+        // Hàm để ẩn tất cả các nội dung và xóa lớp active khỏi tất cả item
+        function resetActive() {
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+            navItems.forEach(item => {
+                item.classList.remove('active');
+            });
+        }
+
+        // Lặp qua từng item trong thanh điều hướng
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Lấy id của nội dung tương ứng
+                const contentId = item.getAttribute('data-content');
+                
+                // Gọi hàm reset để ẩn nội dung hiện tại
+                resetActive();
+                
+                // Hiển thị nội dung tương ứng
+                document.getElementById(contentId).classList.add('active');
+                
+                // Đánh dấu item điều hướng là active
+                item.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
