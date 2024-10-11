@@ -27,7 +27,7 @@ ul{
 .footer p {
     position: absolute; /* Vẫn giữ vị trí tuyệt đối */
     color: #bbbbbb80;
-    font-size: 1rem;
+    font-size: clamp(0.5rem, 1vw, 1rem); /* Sử dụng clamp để giữ kích thước font chữ không quá nhỏ hoặc quá lớn */
     font-weight: 300;
     bottom: 10px;
     left: 50%; /* Đặt bên trái ở giữa */
@@ -108,6 +108,7 @@ ul{
 	height: auto; /* Giữ tỉ lệ của ảnh */
 	object-fit: cover;
 }
+
 
 /*responsive*/
 @media(max-width: 600px){
