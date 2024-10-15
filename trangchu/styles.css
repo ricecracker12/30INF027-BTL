@@ -403,7 +403,7 @@ body {
 .container2 {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
     margin: 20px 0;
     justify-content: center;
     align-items: center;
@@ -590,6 +590,10 @@ body {
 
     .article-content {
         text-align: center; /* Căn giữa nội dung bên trong article-content */
+    }
+    .partner {
+        width: 100px;
+        height: 100px;
     }
     .container3 {
         grid-template-columns: 1fr; /* Chuyển thành 1 cột khi màn hình nhỏ */
