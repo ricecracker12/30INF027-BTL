@@ -525,7 +525,7 @@ body {
     .banner-content {
         width: 80%; /* Tăng độ rộng cho nội dung */
         left: 10%; /* Đặt lại vị trí cho phù hợp */
-        top: 30%;
+        top: 40%;
     }
     .banner-content a{
         margin-top: 1rem;
@@ -592,8 +592,8 @@ body {
         text-align: center; /* Căn giữa nội dung bên trong article-content */
     }
     .partner {
-        width: 100px;
-        height: 100px;
+        width: 130px;
+        height: 130px;
     }
     .container3 {
         grid-template-columns: 1fr; /* Chuyển thành 1 cột khi màn hình nhỏ */
