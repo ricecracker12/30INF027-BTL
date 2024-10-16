@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+div#container {
+    /*display: flex;
+    align-items: flex-start;
+    overflow:auto;
+    padding: 3vw 3vw;*/
+
+    display: flex;
+    align-items: flex-start;
+    padding: 3vw 7vw;
+}
+
+#main {
+    float: left;
+    width: 70%;
+    padding: 0 20px;
+}
+
+#sidebar {
+    background-color: #e5e5e5;
+    float: left;
+    width: 30%;
+    position: sticky;
+    top: 0;
+    padding: 15px;
+    height: 500px;
+}
+
+#sidebar-mobile {
+    background-color: #e5e5e5;
+    float: left;
+    width: 30%;
+    padding: 15px;
+    visibility: hidden;
+}
+
+.article p {
+    margin: 4px;
+    font-size: 16px;
+}
+
+.article {
+    padding: 1vw;
+}
+
+.article figure {
+    display: block;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(194, 186, 186, 0.411);
+    padding: 15px 15px;
+}
+
+.article figure img {
+    width: 100%;
+    height: auto;
+}
+
+.article figure figcaption {
+    text-align: center;
+    color: rgb(112, 112, 134);
+    font-size: 14px;
+}
+
+
+.related-item {
+    border-bottom: 1px solid rgba(112, 112, 112, 0.295);
+    display: flex;
+    padding: 15px 0px;
+}
+
+.related-item p {
+    font-size: 14px;
+}
+
+.mini {
+    width: 80px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 3px;
+    margin: 0px 10px;
+}
+
+#sidebar :hover p {
+    color: rgb(0, 156, 184);
+}
+
+a {
+    text-decoration: none;
+}
