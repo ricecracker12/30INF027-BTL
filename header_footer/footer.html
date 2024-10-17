@@ -33,7 +33,7 @@
 	.footer p {
 		position: absolute; /* Vẫn giữ vị trí tuyệt đối */
 		color: #bbbbbb80;
-		font-size: 1rem;
+		font-size: clamp(0.3rem, 1vw, 0.8rem); /* Sử dụng clamp để giữ kích thước font chữ trong khoảng từ 0.6rem đến 1rem */
 		font-weight: 300;
 		bottom: 10px;
 		left: 50%; /* Đặt bên trái ở giữa */
