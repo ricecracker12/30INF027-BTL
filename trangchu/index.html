@@ -11,21 +11,11 @@
     <title>An Toàn Trẻ Em</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script2.js"></script>
-    
-    <script>
-        // Hàm để tải nội dung từ tệp HTML
-        function loadHTML(file, elementId) {
-            fetch(file)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById(elementId).innerHTML = data;
-                })
-                .catch(error => console.error('Có lỗi xảy ra:', error));
-        }
-
-        // Tải hai tệp HTML vào các phần tử tương ứng
-        loadHTML('/header_footer/header.html', 'header');
-        loadHTML('/header_footer/footer.html', 'footer');
+    <script> 
+        $(function(){
+          $("#header").load("/header_footer/header.html");
+          $("#footer").load("/header_footer/footer.html");
+        });
     </script>
 </head>
 <body>
