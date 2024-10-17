@@ -64,7 +64,7 @@ body {
 .banner-content {
     position: absolute;
     top: 40%;
-    left: 50px;
+    left: 10%;
     width: 60%;
     z-index: 2;
     text-align: start;
