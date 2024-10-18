@@ -228,8 +228,10 @@ body {
     cursor: pointer;
     font-size: clamp(0.9rem, 3vw, 1.3rem);
     transition: background-color 0.3s, color 0.3s;
-    background-color: rgb(203, 203, 204); /* Màu xám mặc định cho tất cả nav-item */
-    color: rgb(255, 254, 254);
+    background-color: #fdfdfd;
+    color: rgb(5, 5, 5);
+    font-weight: 500;  
+    border: var(--mau-content) 2px solid;
 }
 
 .nav-item.active {
