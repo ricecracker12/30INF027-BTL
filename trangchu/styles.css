@@ -10,6 +10,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f1f1f1;
+
 }
 
 .banner-container {
@@ -135,13 +136,15 @@ body {
     position: relative;
 }
 .box-content2{
-    padding: 10px 30px;
+    margin: 10px auto;
+    max-width: 1000px;
 }
 
 .boxtext h1 {
     display: inline-block;
-    padding: 5px 20px;
+    padding: 10px 20px;
     margin-top: 1rem;
+    margin-left: 30px;
     font-size: clamp(1rem, 5vw, 1.5rem);
     color: #000000;
     text-decoration: none;
@@ -204,7 +207,7 @@ body {
 }
 
 .container1 {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 20px auto;
     background-color: white;
     border-radius: 10px;
@@ -223,7 +226,7 @@ body {
     padding: 12px 24px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: clamp(0.9rem, 4vw, 1.6rem);
+    font-size: clamp(0.9rem, 3vw, 1.3rem);
     transition: background-color 0.3s, color 0.3s;
     background-color: rgb(203, 203, 204); /* Màu xám mặc định cho tất cả nav-item */
     color: rgb(255, 254, 254);
@@ -347,7 +350,7 @@ body {
 }
 
 .card-title {
-    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-size: clamp(1rem, 3vw, 1.5rem);
     font-weight: bold;
     text-align: center;
     margin: 0; /* Xóa margin để căn giữa hoàn hảo */
@@ -363,8 +366,8 @@ body {
 .article-image-container {
     overflow: hidden;
     border-radius: 10px;
-    width: 200px;
-    height: 150px;
+    width: 150px;
+    height: 100px;
 }
 .article img {
     width: 100%;
@@ -379,11 +382,11 @@ body {
     flex: 1;
 }
 .article-content h4 {
-    font-size: clamp(1rem, 3vw, 1.3rem);
+    font-size: clamp(0.7rem, 3vw, 1rem);
     font-weight: normal;
 }
 .article-title {
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-size: clamp(0.8rem, 3vw, 1.2rem);
     margin-bottom: 5px;
     font-weight: bold;
 }
@@ -434,9 +437,10 @@ body {
     display: grid; /* Sử dụng CSS Grid */
     grid-template-columns: 3fr 2fr; /* Hai cột với tỷ lệ 3:2 */
     grid-gap: 0px; /* Khoảng cách giữa các box */
-    min-height: 500px;
+    min-height: 400px;
     max-height: 800px; /* Chiều cao tối thiểu và tối đa của container */
-    margin: 40px 20px; /* Khoảng cách giữa container và các phần tử khác */
+    max-width: 1000px; /* Chiều rộng tối đa của container */
+    margin: 40px auto; /* Khoảng cách giữa container và các phần tử khác */
 }
 
 .anhdonate {
@@ -463,13 +467,13 @@ body {
 }
 
 .noidungdonate h2 {
-    font-size: clamp(1rem, 3vw, 1.5rem); /* Kích thước tiêu đề */
+    font-size: clamp(0.8rem, 3vw, 1.3rem); /* Kích thước tiêu đề */
     color: white; /* Màu chữ */
     justify-content: center;
 }
 
 .noidungdonate p {
-    font-size: clamp(0.6rem, 3vw, 1.3rem); /* Kích thước văn bản */
+    font-size: clamp(0.6rem, 3vw, 1rem); /* Kích thước văn bản */
     color: white; /* Màu chữ */
     text-align: center; /* Căn giữa văn bản */
     margin: 5px 0; /* Giảm khoảng cách giữa p và h2 */
@@ -484,7 +488,7 @@ body {
     border: 2px solid white; /* Đường viền cho nút */
     border-radius: 5px; /* Bo tròn góc */
     transition: all 0.3s; /* Hiệu ứng mượt mà */
-    font-size: clamp(0.8rem, 3vw, 1.3rem); /* Kích thước chữ */
+    font-size: clamp(0.6rem, 3vw, 1rem); /* Kích thước chữ */
     font-weight: bold;
 }
 .lienket:hover {
@@ -508,11 +512,11 @@ body {
     margin: 30px auto; /* Khoảng cách giữa đường kẻ và đoạn text, và căn giữa */
 }
 .cuoicung > h2 {
-    font-size: clamp(1rem, 3vw, 1.5rem); /* Kích thước tiêu đề */
+    font-size: clamp(0.8rem, 3vw, 1.3rem); /* Kích thước tiêu đề */
     margin: 20px 0; /* Khoảng cách trên và dưới */
 }
 .cuoicung > p{
-    font-size: clamp(0.6rem, 3vw, 1.3rem); /* Kích thước văn bản */
+    font-size: clamp(0.6rem, 3vw, 1rem); /* Kích thước văn bản */
     margin: 5px 0; /* Khoảng cách trên và dưới */
     font-style: italic; /* In nghiêng văn bản */
 }
@@ -537,6 +541,11 @@ body {
     .box-content2{
         padding: 10px 10px;
     }
+    .boxtext h1 {
+        margin-left: 0px;
+        width: 100%;
+ 
+    }
     .content {
         flex-direction: column;
     }
@@ -558,6 +567,7 @@ body {
     .nav-item {
         width: 100%; /* Đặt chiều rộng nav-item bằng 100% */
         text-align: center; /* Căn giữa nội dung bên trong nav-item */
+
     }
 
     .content {
