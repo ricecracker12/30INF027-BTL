@@ -1,0 +1,379 @@
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #F7F9FA;
+    font-family: system-ui, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+}
+
+/* Phần header chứa thanh tìm kiếm */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo a img{
+    width: 150px;
+}
+
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 8px 12px;
+    padding-right: 40px; /* Tạo khoảng trống cho biểu tượng */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px; /* Đặt biểu tượng cách lề phải 10px */
+    color: #aaa;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.search-icon:hover {
+    color: #007BFF; /* Đổi màu khi hover */
+}
+
+/* Sidebar và nội dung */
+.sidebar {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: calc(100vh - 60px);
+    position: fixed;
+    top: 60px;
+    left: 0;
+    bottom: 0;
+
+}
+.sidebar::-webkit-scrollbar-thumb {
+    width: 1px;
+  background: #c72222; /* Màu nền của thanh cuộn */
+  border-radius: 10px; /* Độ bo góc của track */
+}
+.sidebar nav ul {
+    list-style-type: none;
+}
+
+.sidebar nav ul li {
+    margin: 20px 0;
+    text-decoration: none;
+}
+.sidebar nav ul li a{
+    font-weight: 600;
+    color:#5a5a5a ;
+    margin: 20px 0;
+    text-decoration: none;
+
+}
+#active {
+    color: #eeeeee;
+    background-color: #5f5f5f;
+    padding: 5px 40% 7px 10px;
+    border-radius: 3px;
+    font-weight: 700;
+}
+
+.social-container {
+
+    display: flex;
+    flex-direction: column;
+    margin-left: 190px;
+}
+
+.content {
+    max-width: 630px;
+    border: 1px solid #e4e2e2;
+   background-color: #ffffff;
+    margin: 0px auto;
+    padding: 20px;
+    flex-grow: 1;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+iframe {
+    margin: 20px 0px;
+    max-width: 100%;
+    height: 300px;
+}
+.emotion {
+    position: relative;
+    display: inline-block;
+}
+.emotion  a{
+  text-decoration: none;
+    color: #424141;
+}
+.pic-emoji {
+    display: none;
+    bottom: 100%;
+    z-index: 10;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: absolute;
+    border: 1px solid #aaa;
+    border-radius: 25px;
+    padding: 5px;
+    background-color: #ffffff;
+    left: 130%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateX(-50%);
+}
+
+
+
+.emotion a:hover + .pic-emoji {
+
+  display: block; /* Hiện thẻ pic-emoji */
+  transform: translate(-50%, -10px); /* Đưa lên trên một chút */
+  opacity: 1; /* Hiện thẻ với độ trong suốt */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01); /* Đổ bóng cho hiệu ứng nổi lên */
+}
+
+.pic-emoji img {
+    
+    width: 300px;
+}
+.emotion a img {
+    width: 60px;
+    height: auto;
+}
+.emotion ul li{
+
+    list-style-type: none;
+    text-decoration: none;
+}
+.emoji-drop {
+    padding: 5px 5px 5px 0px;
+    display: none;
+    position: absolute;
+    z-index: 10;
+    border: 1px solid #aaa;
+    width: 200px;
+    border-radius: 5px;
+}
+.emoji-drop li {
+    font-weight: 600;
+    cursor: pointer;
+    border-bottom: 1px solid #aaa;
+    padding: 5px;
+    color: #424141;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.001); /* Đổ bóng cho hiệu ứng nổi lên */
+
+}
+.emoji-drop.show {
+  display: block;
+}
+/* Phần responsive */
+@media (max-width: 999px) {
+    .sidebar {
+        display: none;
+    }
+    .social-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+    .content {
+        max-width: 600px;
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+    .logo a img{
+    width: 150px;
+}
+}
+
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cộng đồng | Giấc Mơ Cho Em</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+    <!-- Phần thanh tìm kiếm -->
+    <header class="header">
+        <div class="logo"><a href=""><img src="./imgcongdong/congdonglogo.png" alt=""></a></div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <!-- Thêm biểu tượng kính lúp -->
+            <i class="fas fa-search search-icon"></i>
+        </div>
+    </header>
+        <!-- Sidebar và nội dung chính -->
+    <div class="sidebar">
+        <div>
+        <nav>
+            <ul>
+                <li><a href="" id="active">Trang chủ</a></li>
+                <li ><a style="color: #2e2e2e; font-weight: 700;" href="">THÔNG TIN CHUNG</a></li>
+                <li><a href="">Thông báo</a></li>
+                <li ><a style="color: #2e2e2e;font-weight: 700;" href="">BÉ KHỎE BÉ NGOAN</a></li>
+                <li><a href="">Món ngon cho con</a></li>
+                <li><a href="">Mẹo hay cho mẹ</a></li>
+                <li><a href="">Chơi cùng bé</a></li>
+                <li ><a style="color: #2e2e2e;font-weight: 700;" href="">HỎI ĐÁP</a></li>
+                <li ><a style="color: #2e2e2e;font-weight: 700;" href="">HOẠT ĐỒNG CỘNG ĐỒNG</a></li>
+                <li><a href="">Trò chuyện ngoài lề</a></li>
+                <li><a href="">Tự giới thiệu</a></li>
+                <li><a href="">Họp mặt offline</a></li>
+                <li><a href="">Lịch họp mặt</a></li>
+                <li ><a style="color: #2e2e2e;font-weight: 700;" href="">KHÁC</a></li>
+                <li><a href="">Hướng dẫn sử dụng</a></li>
+                <li><a href="">Đóng góp ý kiến</a></li>
+            </ul>
+        </nav>
+    </div>
+    </div>
+<div class="social-container">
+    <div class="content" style="margin-top: 130px;">
+        <img src="" alt="">
+        <h1>Thông báo cộng đồng </h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/sample-video" frameborder="0" allowfullscreen></iframe>
+        <p>Xin chào các anh chị! Chắc các anh chị cũng bất ngờ khi thấy video này ngày hôm nay. uywfivfivi befi iebefb efifeb iefb ife feh ì eb e epihf h hfd bd iuh nfyu iufnf u f f ifvybn ìn iu ffbi</p>
+        <div class="emotion">
+            <a href="" id="emoji-link">
+                <img src="./imgcongdong/emoji.jpg" alt=""><b>1.223</b>
+            </a>
+            <div class="pic-emoji">
+                <img  src="./imgcongdong/emojidrop.png" alt="">
+            </div>
+            <ul class="emoji-drop">
+                <li>Nguyễn Hương</li>
+                <li>Đôc Văn Nguyên</li>
+                <li>Lân hoàng</li>
+                <li>Ngân</li>
+                <li> Hoàng boy phố</li>
+                <li>....</li>
+            </ul>
+    </div>
+    </div>
+
+    <div class="content">
+        <img src="" alt="">
+        <h1>Thông báo cộng đồng </h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/sample-video" frameborder="0" allowfullscreen></iframe>
+        <p>Xin chào các anh chị! Chắc các anh chị cũng bất ngờ khi thấy video này ngày hôm nay. uywfivfivi befi iebefb efifeb iefb ife feh ì eb e epihf h hfd bd iuh nfyu iufnf u f f ifvybn ìn iu ffbi</p>
+        <div class="emotion">
+            <a href="" id="emoji-link">
+                <img src="./imgcongdong/emoji.jpg" alt=""><b>1.223</b>
+            </a>
+            <div class="pic-emoji">
+                <img  src="./imgcongdong/emojidrop.png" alt="">
+            </div>
+            <ul class="emoji-drop">
+                <li>Nguyễn Hương</li>
+                <li>Đôc Văn Nguyên</li>
+                <li>Lân hoàng</li>
+                <li>Ngân</li>
+                <li> Hoàng boy phố</li>
+                <li>....</li>
+            </ul>
+    </div>
+    </div>
+
+    <div class="content">
+        <img src="" alt="">
+        <h1>Thông báo cộng đồng </h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/sample-video" frameborder="0" allowfullscreen></iframe>
+        <p>Xin chào các anh chị! Chắc các anh chị cũng bất ngờ khi thấy video này ngày hôm nay. uywfivfivi befi iebefb efifeb iefb ife feh ì eb e epihf h hfd bd iuh nfyu iufnf u f f ifvybn ìn iu ffbi</p>
+        <div class="emotion">
+            <a href="" id="emoji-link">
+                <img src="./imgcongdong/emoji.jpg" alt=""><b>1.223</b>
+            </a>
+            <div class="pic-emoji">
+                <img  src="./imgcongdong/emojidrop.png" alt="">
+            </div>
+            <ul class="emoji-drop">
+                <li>Nguyễn Hương</li>
+                <li>Đôc Văn Nguyên</li>
+                <li>Lân hoàng</li>
+                <li>Ngân</li>
+                <li> Hoàng boy phố</li>
+                <li>....</li>
+            </ul>
+    </div>
+    </div>
+
+    <div class="content">
+        <img src="" alt="">
+        <h1>Thông báo cộng đồng </h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/sample-video" frameborder="0" allowfullscreen></iframe>
+        <p>Xin chào các anh chị! Chắc các anh chị cũng bất ngờ khi thấy video này ngày hôm nay. uywfivfivi befi iebefb efifeb iefb ife feh ì eb e epihf h hfd bd iuh nfyu iufnf u f f ifvybn ìn iu ffbi</p>
+        <div class="emotion">
+            <a href="" id="emoji-link">
+                <img src="./imgcongdong/emoji.jpg" alt=""><b>1.223</b>
+            </a>
+            <div class="pic-emoji">
+                <img  src="./imgcongdong/emojidrop.png" alt="">
+            </div>
+            <ul class="emoji-drop">
+                <li>Duy Tân Minh Trị</li>
+                <li>Vẫn i Nguyên</li>
+                <li>Lân hoàng hôn</li>
+                <li>Ngân nga</li>
+                <li> Hoàng Tử Long Biên</li>
+                <li>....</li>
+            </ul>
+    </div>
+    </div>
+</div>
+   
+
+    
+</div>
+<script>
+    
+document.getElementById('emoji-link').addEventListener('click', function(e) {
+    e.preventDefault();  // Ngăn chặn hành động mặc định của thẻ a
+  
+    var emojiDrop = document.querySelector('.emoji-drop');
+    var kk = document.querySelector('.picemoji')
+    // Toggle hiển thị thẻ emoji-drop khi click
+    emojiDrop.classList.toggle('show'); 
+
+    // Sử dụng class để điều khiển hiển thị
+  });
+</script>
+  
+
+ 
+    
+</body>
+
+</html>

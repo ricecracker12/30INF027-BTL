@@ -1,0 +1,93 @@
+<style>
+.emotion {
+    margin-top: 300px;
+  position: relative;
+  display: inline-block;
+}
+
+.pic-emoji {
+  display: none; /* Ẩn mặc định */
+  position: absolute;
+  bottom: 100%; /* Đặt lên trên mục */
+  left: 50%; /* Căn giữa theo chiều ngang */
+  transform: translateX(-50%); /* Căn giữa hoàn hảo */
+  z-index: 2; /* Đảm bảo nó ở trên các phần tử khác */
+  opacity: 0; /* Ẩn mặc định */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Hiệu ứng chuyển đổi */
+}
+
+.pic-emoji img {
+  width: 100px; /* Chiều rộng của hình ảnh */
+  height: auto; /* Tự động điều chỉnh chiều cao */
+}
+
+/* Hiện thẻ pic-emoji khi hover vào thẻ a */
+.emotion a:hover + .pic-emoji {
+  display: block; /* Hiện thẻ pic-emoji */
+  transform: translate(-50%, -10px); /* Đưa lên trên một chút */
+  opacity: 1; /* Hiện thẻ với độ trong suốt */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Đổ bóng cho hiệu ứng nổi lên */
+}
+
+.emoji-drop {
+  display: none; /* Ẩn mặc định */
+  position: absolute;
+  top: 150%; /* Đặt vị trí thả xuống dưới hình emoji */
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.emoji-drop li {
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Hiện thẻ emoji-drop khi click */
+.emoji-drop.show {
+  display: block;
+}
+
+
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="emotion">
+        
+          <img src="./imgcongdong/emoji.jpg" alt="">
+          <b>1.223</b>
+        <div class="pic-emoji">
+          <img src="./imgcongdong/emojidrop.png" alt="">
+        </div>
+        <ul class="emoji-drop">
+          <li>Nguyễn Hương</li>
+          <li>Đôc Văn Nguyên</li>
+          <li>Lân hoàng</li>
+          <li>Ngân</li>
+          <li>Hoàng boy phố</li>
+          <li>....</li>
+        </ul>
+      </div>
+      
+</body>
+<script>
+  document.getElementById('emoji-link').addEventListener('click', function(e) {
+  e.preventDefault();  // Ngăn chặn hành động mặc định của thẻ a
+
+  var emojiDrop = document.querySelector('.emoji-drop');
+
+  // Toggle hiển thị thẻ emoji-drop khi click
+  emojiDrop.classList.toggle('show'); // Sử dụng class để điều khiển hiển thị
+});
+
+</script>
+</html>

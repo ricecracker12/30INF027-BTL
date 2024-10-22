@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ChTraotang.css">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div id="header" style="position: absolute;"></div>
+    <img src="https://mytourcdn.com/upload_images/Image/Minh%20Hoang/Tay%20bac/tre%20em/1.jpg" alt="Background Image" class="img-fullscreen">
+
+    <div class="container-traotang">
+        <h1>ĐỒNG HÀNH CÙNG HẠNH PHÚC CỦA TRẺ EM</h1>
+        <p>Đã có <span style="color:#A80000"><strong>29355</strong></span> người chung tay tham gia chiến dịch "nụ cười của em"</p>
+        <br>
+        <br>
+        <form id="signup">
+            <label for="lastname">Họ và Tên</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Nhập họ tên của bạn">
+    
+            <label for="number">Số Điện Thoại</label>
+            <input type="text" id="number" name="number" placeholder="Nhập số điện thoại của bạn">
+    
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Nhập email của bạn">
+    
+            <label for="country">Thành Phố</label>
+            <select id="country" name="country">
+                <option value="Hà Nội">Hà Nội</option>
+                <option value="TP Hồ Chí Minh">TP Hồ Chí Minh</option>
+                <option value="Đà Nẵng">Đà Nẵng</option>
+                <option value="Nha Trang">Nha Trang</option>
+                <option value="Quy Nhơn">Quy Nhơn</option>
+                <option value="Cà Mau">Cà Mau</option>
+        
+            </select>
+            <button type="submit" onclick="submitForm()">Tham gia</button>
+            <div class="box">
+                <a href="https://www.facebook.com/">Tham gia</a>
+
+            </div>
+
+        </form>
+    </div>    
+<script>
+    function submitForm(){
+        const lastName = document.getElementById('lastName').value;
+        const firstName = document.getElementById('firstName').value;
+        const phone = document.getElementById('phone').value;
+
+        if(!/^^[0-9]{10}$/.test(phone)){
+            alert('Số điện thoạt không hợp lệ. Vui lòng nhập lại');
+            return;
+        }
+        const gender = document.querySelector('input[name="gender"]:checked')?.value;
+        const selectedHobbies = Array.from(document.querySelectorAll('input[name="hobby"]:checked'))
+            .map(hobby => hobby.value);
+
+        alert(`Họ và Tên : ${lastName}\nSố Điện Thoại: ${Phone}\n: ${gender}\nEmail: ${selectedHobbies.join(', ')}\nKhác: ${document.getElementById('other').value}`);
+
+    }
+</script>
+
+</body>
+</html>
