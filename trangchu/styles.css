@@ -7,6 +7,7 @@
     --mau-content: rgb(145, 0, 0);
 }
 
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f1f1f1;
@@ -72,9 +73,10 @@ body {
 }
 
 .banner-content h1 {
-    font-size: clamp(1rem, 3vw, 1.5rem); /* Giảm kích thước cho phù hợp */
+    font-size: clamp(1.3rem, 3vw, 1.8rem); /* Giảm kích thước cho phù hợp */
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
 .banner-content p {
