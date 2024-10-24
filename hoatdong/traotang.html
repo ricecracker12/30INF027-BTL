@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt lịch trao tặng</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="../header_footer/img/logo.png" type="image/x-icon">
+    <script> 
+        $(function(){
+          $("#header").load("../header_footer/header.html");
+          $("#footer").load("../header_footer/footer.html");
+        });
+    </script>
+    <style> 
+    .background-image {
+        background-image: url('https://image.tienphong.vn/w890/Uploaded/2024/rkznae/2016_06_16/Tre_con_noi_gi_ve_tinh_yeu_weknowyourdreams_com1__JQXK.jpg'); /* Hình ảnh liên quan đến hoạt động trao tặng */
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    /* Định dạng cho phần banner */
+    .banner-traotang {
+        background-color: #ff5252;
+        color: white;
+        text-align: center;
+        padding: 50px 10px;
+        font-family: 'Arial', sans-serif;
+        border-bottom: 5px solid #ff4545;
+    }
+
+    .banner-traotang h1 {
+        font-size: 36px;
+        margin: 0;
+        font-weight: bold;
+    }
+
+    .banner-traotang p {
+        font-size: 18px;
+        margin-top: 10px;
+        font-style: italic;
+    }
+
+    /* Định dạng cho phần container */
+    .container-traotang {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 40px;
+        background-color: white;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        font-family: 'Arial', sans-serif;
+    }
+
+    h2 {
+        text-align: center;
+        color: #2C3E50;
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+        color: #2C3E50;
+    }
+
+    input, textarea {
+        padding: 12px;
+        border: 2px solid #85C1E9;
+        border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+
+    button {
+        padding: 15px;
+        background-color: #ff2525;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        width: 100%;
+    }
+
+    button:hover {
+        background-color: #d60000;
+    }
+
+    #successMessage {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    @media screen and (max-width: 600px) {
+        .background-image {
+            background-image: none;
+            margin: 10px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <!-- Phần banner -->
+    <div class="banner-traotang">
+        <h1>Trao tặng cho trẻ em</h1>
+        <p>Gửi phần quà nhỏ của bạn trao tặng giúp đỡ các trẻ em có hoàn cảnh khó khăn.</br> Điền thông tin trao tặng phần quà của bạn bên dưới</br> Cảm ơn bạn vì đã đóng góp cho tương lai của trẻ em.</p>
+    </div>
+
+    <div class="background-image">
+        <!-- Phần chính của trang -->
+        <div class="container-traotang">
+            <h2>Trao tặng yêu thương</h2>
+            <form id="donationForm">
+                <div class="form-group">
+                    <label for="name"><i class="fas fa-user"></i> Họ và tên:</label>
+                    <input type="text" id="name" name="name" required placeholder="Nhập họ và tên của bạn">
+                </div>
+
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Nhập email của bạn">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone"><i class="fas fa-phone-alt"></i> Số điện thoại:</label>
+                    <input type="text" id="phone" name="phone" required placeholder="Nhập số điện thoại">
+                </div>
+
+                <div class="form-group">
+                    <label for="payment-method">Phương thức thanh toán:</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">
+                        <i class="bi bi-credit-card"></i> <!-- Icon thẻ tín dụng -->
+                        </span>
+                        <select id="payment-method" class="form-select" name="payment-method">
+                        <option value="visa">Visa</option>
+                        <option value="mastercard">MasterCard</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="momo">Momo</option>
+                        <option value="zalopay">ZaloPay</option>
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="money"><i class="bi bi-cash"></i> Số tiền trao tặng:</label>
+                    <input type="text" class="form-control" id="money" name="money" required placeholder="0 VND">
+                </div>
+                  
+                  
+                  
+
+                <div class="form-group">
+                    <label for="message"><i class="fas fa-comment-alt"></i> Lời nhắn trao tặng:</label>
+                    <textarea id="message" name="message" rows="5" placeholder=""></textarea>
+                </div>
+
+                <button type="submit" style="color: white;">Trao tặng</button>
+            </form>
+            <p id="successMessage" style="display:none; color: green;">Cảm ơn bạn!</p>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+        document.getElementById('donationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('successMessage').style.display = 'block';
+        });
+    </script>
+    <script>
+        const moneyInput = document.getElementById('money');
+      
+        moneyInput.addEventListener('input', function(e) {
+          // Lấy giá trị của input, bỏ đi chữ "VND" và các ký tự không phải số
+          let value = e.target.value.replace(/[^\d]/g, '');
+      
+          // Thêm dấu phẩy giữa các nhóm số hàng ngàn
+          value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      
+          // Thêm " VND" vào cuối chuỗi
+          e.target.value = value + ' VND';
+        });
+      
+        moneyInput.addEventListener('focus', function() {
+          // Xóa placeholder khi người dùng focus vào input
+          if (this.value === '') {
+            this.value = '0 VND';
+          }
+        });
+      
+        moneyInput.addEventListener('blur', function() {
+          // Khi người dùng rời khỏi input, nếu giá trị là 0 thì để lại placeholder
+          if (this.value === '0 VND') {
+            this.value = '';
+          }
+        });
+      </script>
+</body>
+</html>

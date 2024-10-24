@@ -527,7 +527,7 @@ body {
 
 @media screen and (max-width: 678px) {
     .banner-container {
-        height: 500px;
+        height: 600px;
     }
     .banner-content {
         width: 80%; /* Tăng độ rộng cho nội dung */
